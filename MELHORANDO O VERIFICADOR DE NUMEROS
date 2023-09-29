@@ -1,0 +1,22 @@
+# P
+O objetivo desse repositorio é guardar meus projetos referentes a faculdade.
+Não consegui executar no colab.
+
+import phonenumbers
+# 1 passo chamei a biblioteca (phonenumbers).
+telefone = input()
+# 2 passo digitei o numero a qual quero verificar!.
+telefone_ajustado = phonenumbers.parse(telefone)
+# 3 passo crio uma variavel para armazenar o numero de telefone e com a biblioteca a cima verifico usando (parse).
+print(f'País: {telefone_ajustado.country_code} número: {telefone_ajustado.national_number}')
+# 4 passo troco as strings "Country_code" e "National_Number" pelas strings armazenadas antes dos {}.
+from phonenumbers import geocoder
+# 5 passo importo da biblioteca (phonenumbers) a opção (geocoder), esse (geocoder) vai verificar de onde o numero vem: ex: Paraiba, são Paulo e etc
+local = geocoder.description_for_number(telefone_ajustado, 'pt-br')
+# 6 passo crio a variavel local 
+print(local)
+# 7 passo mostro o lugar onde o numero se encontra
+import pywhatkit
+# 8 passo aqui eu chamaria a biblioteca que manda menssagens, videos, imagens e etc no watshapp
+pywhatkit.sendwhatmsg_instantly(telefone_ajustado.national_number , "Ola, Tudo bem?")
+# 9 passo aqui seria eu utilizando (sendwhatmsg_instantly) que envia a menssagem direto para o numero digitado la em cima "telefone_ajustado.national_number"
