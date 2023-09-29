@@ -1,0 +1,45 @@
+# Projetos
+O objetivo desse repositorio é guardar meus projetos referentes a faculdade.
+
+
+# Area de Apresentação
+print("="*30)
+print("|         CALCULADORA        |")
+print("="*30)
+
+def calculator(numero_1, numero_2, operation):
+    # delimitei a funcao colocando os valores a serem usados!!!
+    def soma(numero_1, numero_2):
+        return numero_1 + numero_2
+    # fiz a funcao soma dando o return do calculo
+    def subtracao(numero_1, numero_2):
+        return numero_1 - numero_2
+    # fiz a funcao subtração dando o return do calculo
+    def multiplicacao(numero_1, numero_2):
+        return numero_1 * numero_2
+    # fiz a funcao multiplicação dando o return do calculo
+    def divisao(numero_1, numero_2):
+        return numero_1 / numero_2
+    # fiz a funcao divisão dando o return do calculo
+    while operation != "=" :
+    # criei uma estrutura de repetição pra quando eu colocar no operation o "=", o while para! e não executa mais
+        numero_1 = int(input("Digite o primeiro numero: "))
+        # perguntando o primeiro numero
+        operation = input("Digite um dos operadores! +  -  *  / ")
+        # perguntando o operador que vai ser usado
+        numero_2 = int(input("Digite o segundo numero: "))
+        # perguntando o segundo numero
+        if operation == "+":
+           print(soma(numero_1, numero_2))
+        elif operation == "-":
+            print(subtracao(numero_1, numero_2))
+        elif operation == "*":
+            print(multiplicacao(numero_1, numero_2))
+        elif operation == "/":
+            print(divisao(numero_1, numero_2))
+        # coloquei uma condição caso o operation seja um dos 4 operadores citados acima!
+
+
+calculator(5, 6, "+")
+# aqui so para chamar a função mesmo.
+
