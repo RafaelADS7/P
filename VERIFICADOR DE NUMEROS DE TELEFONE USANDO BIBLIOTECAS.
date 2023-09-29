@@ -1,0 +1,29 @@
+# Projeto
+Nesse codigo estou fazendo um verificador de numero de telefone.
+
+O OBJETIVO ERA:
+1ª LER O NUMERO
+2ª VERIFICAR O NUMERO
+3ª E MANDAR UMA MENSSAGEM A ESSE NUMERO.
+
+print("="*39)
+print("|       OLa, seja bem vindo!!!!       |")
+print("|   Verifique o seu numero desejado   |")
+print("="*39)
+import phonenumbers
+# 1 passo chamei a biblioteca (phonenumbers).
+telefone = input("Digite o (+DDI) seu (DDD) e o seu numero de telefone (9XXXXXXXX) ")
+# 2 passo digitei o numero a qual quero verificar!.
+telefone_ajustado = phonenumbers.parse(telefone)
+# 3 passo crio uma variavel para armazenar o numero de telefone e com a biblioteca a cima verifico usando (parse).
+print(f'País: {telefone_ajustado.country_code} número: {telefone_ajustado.national_number}')
+# 4 passo troco as strings "Country_code" e "National_Number" pelas strings armazenadas antes dos {}.
+from phonenumbers import geocoder
+# 5 passo importo da biblioteca (phonenumbers) a opção (geocoder), esse (geocoder) vai verificar de onde o numero vem: ex: Paraiba, são Paulo e etc
+local = geocoder.description_for_number(telefone_ajustado, 'pt-br')
+# 6 passo crio a variavel local 
+print(local)
+# 7 passo mostro o lugar onde o numero se encontra
+print("OLa", telefone_ajustado.national_number, "tudo bem com voce?")
+# 8 passo ja que não consegui fazer por completo usando (pywhatkit), fiz dessa forma basica mesmo.
+
